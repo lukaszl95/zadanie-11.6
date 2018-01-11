@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=Clicker+Script');
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    background: #585858;
+}
+h1, h2 {
+    text-align: center;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: bold;
+}
+p {
+    padding: 0 20px;
+    font-family: 'Clicker Script', cursive;
+    font-size: 26px;
+    font-weight: bold;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    margin: 10px 30px 30px;
+    background: #fded9c;
+    border: 1px solid #fded9c;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px #fded9c;
+    min-height: 150px;
+}
+button {
+    font-family: 'Roboto';
+    font-size: 14px;
+    font-weight: 600;
+}
+.col-4 {
+    width: 33.33%;
+    float: left;
+}
+.columns {
+    width: 30%;
+    float: left;
+}
+.board {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.board h1 {
+    color: #fff3b6;
+}
+.row {
+    padding-top: 30px;
+}
+.board .create-column {
+    margin: 0 auto;
+    display: flex;
+}
+.column {
+    background: #fff3b6;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 0px #fded9c;
+    margin: 20px;
+}
+.btn-delete {
+    float: right;
+    background: none;
+    border: none;
+    color: #ff8d00;
+    font-size: 24px;
+    padding-right: 8px;
+    cursor: pointer;
+}
+.btn-column {
+    border: none;
+    min-height: 10px;
+    padding: 0 20px;
+}
+.btn-column:focus {
+    outline: none;
+}
+.btn-yellow {
+    background: #fff3b6; 
+    border-bottom-left-radius: 10px;
+}
+.btn-blue {
+    background: #3976ff; 
+}
+.btn-green {
+    background: #3b9a3d; 
+    border-bottom-right-radius: 10px;
+}
+.add-card, .add-column {
+    background: #ffb631;
+    border: 1px solid #ffb631;
+    box-shadow: 0px 0px 20px 0px #ffb631;
+    margin: 15px 30px;
+    cursor: pointer;
+}
+.column-card-list {
+    min-height: 50px;
+    margin: 0;
+}
+.background-yellow {
+    background-color: #fff3b6;
+    box-shadow: 0px 0px 20px 0px #fded9c;
+}
+.background-blue {
+    background-color: #3976ff;
+    box-shadow: 0px 0px 20px 0px #3976ff;
+}
+.background-green {
+    background-color: #3b9a3d;
+    box-shadow: 0px 0px 20px 0px #3b9a3d;
+}
