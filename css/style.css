@@ -49,15 +49,21 @@ button {
 .board {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .board h1 {
     color: #fff3b6;
+    margin: 40px 0;
+    font-size: 50px;
 }
 .row {
     padding-top: 30px;
 }
 .board .create-column {
-    margin: 0 auto;
+    margin: 20px auto;
     display: flex;
 }
 .column {
@@ -80,7 +86,7 @@ button {
     min-height: 10px;
     padding: 0 20px;
 }
-.btn-column:focus {
+button:focus, .textArea:focus {
     outline: none;
 }
 .btn-yellow {
@@ -95,8 +101,10 @@ button {
     border-bottom-right-radius: 10px;
 }
 .add-card, .add-column {
+    padding: 2px 10px;
     background: #ffb631;
     border: 1px solid #ffb631;
+    border-radius: 5px;
     box-shadow: 0px 0px 20px 0px #ffb631;
     margin: 15px 30px;
     cursor: pointer;
@@ -116,4 +124,19 @@ button {
 .background-green {
     background-color: #3b9a3d;
     box-shadow: 0px 0px 20px 0px #3b9a3d;
+}
+.textArea {
+    font-family: 'Clicker Script', cursive;
+    font-size: 26px;
+    font-weight: bold;
+    min-height: 40px;
+    width: 300px !important;
+    margin: 0 30px;
+    background: #fded9c;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px 0px #ffb631;
+}
+.columnTitle {
+    height: 40px;
 }

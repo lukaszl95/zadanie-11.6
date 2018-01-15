@@ -22,6 +22,7 @@ $(function() {
 		    var $columnCardList = $('<ul>').addClass('column-card-list');
 		    var $columnDelete = $('<button>').addClass('btn-delete').text('x').attr({'title':'Delete'});
 		    var $columnAddCard = $('<button>').addClass('add-card').text('Add a card');
+		    var $columnInputText = $('<textarea>').addClass('textArea').text('Card text');
 		    var $columnColorYellow = $('<button>').addClass('btn-yellow col-4 btn-column');
 		    var $columnColorBlue = $('<button>').addClass('btn-blue col-4 btn-column');
 		    var $columnColorGreen = $('<button>').addClass('btn-green col-4 btn-column');
@@ -30,9 +31,15 @@ $(function() {
 		    $columnDelete.click(function() {
 		        self.removeColumn();
 		    });
-		    $columnAddCard.click(function(event) {
-		        self.addCard(new Card(prompt("Enter the name of the card")));
+		    $columnAddCard.click(function() {
+		    	var textInput = $columnInputText.val();
+		    	self.addCard(new Card(textInput));
+
+		        //self.addCard(new Card(prompt("Enter the name of the card")));
 		    });
+		    $columnInputText.click(function(){
+		    	$columnInputText.val('');
+		    });	
 		    $columnColorYellow.click(function() {
 		        self.changeColorYellow();
 		    });
@@ -45,6 +52,7 @@ $(function() {
 		    // CONSTRUCTION COLUMN ELEMENT
 		    $column.append($columnDelete)
 		        .append($columnTitle)
+		        .append($columnInputText)
 		        .append($columnAddCard)
 		        .append($columnCardList)
 		        .append($columnColorYellow)
@@ -57,10 +65,10 @@ $(function() {
 	}
 	Column.prototype = {
 	    addCard: function(card) {
-	      this.$element.children('ul').append(card.$element);
+	    	this.$element.children('ul').append(card.$element);
 	    },
 	    removeColumn: function() {
-	      this.$element.remove();
+	    	this.$element.remove();
 	    },
 	    changeColorYellow: function() {
 	    	this.$element.removeClass('background-blue background-green');
@@ -118,11 +126,15 @@ $(function() {
 			placeholder: 'card-placeholder'
 		}).disableSelection();
 	}
+	$('.columnTitle').click(function(){
+		$('.columnTitle').val('');
+	});
 	$('.create-column').click(function(){
-		var name = prompt('Enter a column name');
+		var name = $('.columnTitle').val();
 		var column = new Column(name);
     	board.addColumn(column);
 		});
+	
 	// CREATING COLUMNS
 	var todoColumn = new Column('To do');
 	var doingColumn = new Column('Doing');
